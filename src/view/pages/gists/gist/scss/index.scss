@@ -1,0 +1,59 @@
+@import "../../../../assets/scss/colors.scss";
+
+.gist-layout {
+  height: 99px;
+  width: 100%;
+  border-bottom: 1px solid $gray20;
+}
+
+.gist-img {
+  height: 74px;
+  width: 74px;
+
+  &.selected {
+    background: $grayscale-black;
+    opacity: 0.5;
+  }
+}
+
+.gist-filename {
+  padding-left: 16px;
+
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+
+  color: $grayscale-black;
+
+  &.selected{
+    color: $primary-blue;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .gist-img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .gist-layout {
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid $gray20;
+  }
+
+
+  .gist-filename {
+    padding-left: 25px;
+
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+
+    color: $grayscale-black;
+  }
+}

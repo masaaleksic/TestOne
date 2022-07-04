@@ -1,0 +1,22 @@
+@import "../../../assets/scss/colors.scss";
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../../../assets/fonts/Helvetica.ttf');
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('../../../assets/fonts/HelveticaNeue.ttf');
+}
+
+.gists-layout {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media screen and (max-width: 375px) {
+  .gists-layout {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+

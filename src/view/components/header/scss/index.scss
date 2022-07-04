@@ -1,0 +1,46 @@
+@import "../../../assets/scss/colors.scss";
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../../../assets/fonts/Helvetica.ttf');
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('../../../assets/fonts/HelveticaNeue.ttf');
+}
+
+.header-layout {
+    width: 100%;
+    height: 28px;
+    background: $header-color;
+  }
+  
+.header-text {
+  height: 18px;
+  margin-left: 16px;
+  margin-top: 6px;
+  margin-bottom: 4px;
+  font-family: 'Helvetica';
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: -0.016em;
+  color: black;
+}
+
+@media screen and (max-width: 375px) {
+    .header-text {
+      height: 18px;
+      margin-left: 16px;
+      margin-top: 6px;
+      margin-bottom: 4px;
+  
+      font-family: 'HelveticaNeue';
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 18px;
+      letter-spacing: -0.016em;
+  
+      color: black;
+    }
+}
