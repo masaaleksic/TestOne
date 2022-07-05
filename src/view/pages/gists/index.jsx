@@ -8,11 +8,20 @@ import { fetchGists } from "../../../app/store/gists/actions";
 import Loader from "../loader";
 import Header from "../../components/header";
 import Pagination from "../../components/pagination";
+import ApiConstants from "../../../constants/api";
+import ErrorPage from "../errorPage";
 
 const Gists = (props) => {
-    const { gists, loader, currentPage } = props;
+    const { gists, loader, currentPage, statusCode } = props;
+    const isStatusOK = statusCode === ApiConstants.STATUS_OK;
+
     useEffect(() => {
         props.fetchGists();
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
     }, [currentPage]);
     return (
         <>
@@ -20,11 +29,10 @@ const Gists = (props) => {
             {
                 loader ?
                     <Loader /> :
-                    gists &&
+                    gists && isStatusOK ?
                     <>
                         <div className='gists-layout'>
                             {
-
                                 gists?.map((item, i) => {
                                     return (
                                         <Gist gistInfo={item} key={i} />
@@ -34,6 +42,7 @@ const Gists = (props) => {
                         </div>
                         <Pagination />
                     </>
+                    : <ErrorPage status={statusCode}/>
             }
         </>
     );
@@ -44,6 +53,7 @@ const mapStateToProps = (state) => {
         gists: state.gists?.gists,
         loader: state.ui.loader,
         currentPage: state.pagination.page,
+        statusCode: state.status.statusCode
     };
 };
 

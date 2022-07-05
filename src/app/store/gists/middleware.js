@@ -6,24 +6,23 @@ import { setLoader } from "../loader/actions";
 import ApiConstants from "../../../constants/api";
 import parse from 'parse-link-header';
 import { setPaginationData } from "../pagination/actions";
+import { setStatus } from "../status/actions";
 
 export const getGistsMiddleware = (store) => (next) => (action) => {
     next(action);
     switch (action.type) {
         case ActionTypes.FETCH_GISTS:
-            console.log("PAGE:", store.getState().pagination.page);
             next(setLoader(true));
-            axios.get(`${Config.api.github}${Config.gists}`, {
+            axios.get(`c${Config.api.github}${Config.gists}`, {
                     params: { page: store.getState().pagination.page }
             })
                 .then(resp => {
+                    next(setStatus(resp.status));
                     if (resp.status === ApiConstants.STATUS_OK) {
-                        console.log(resp);
-                        console.log(parse(resp.headers.link));
                         next(setPaginationData(parse(resp.headers.link)));
                         next(setGists(resp.data));
-                        next(setLoader(false));
                     }
+                    next(setLoader(false));
                 });
 break;
     }

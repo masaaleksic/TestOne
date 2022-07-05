@@ -1,3 +1,5 @@
+@import "./colors.scss";
+
 @font-face {
   font-family: 'Helvetica';
   src: url('../fonts/Helvetica.ttf');
@@ -23,3 +25,19 @@
 .pointer {
   cursor: pointer;
 }
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: $scrollbar-thumb;
+}
+
+::-webkit-scrollbar-track {
+  background: $scrollbar-track;
+  border: solid 2px $scrollbar-track-border;
+  scroll-padding: 1px;
+}
+
