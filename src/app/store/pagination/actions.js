@@ -3,7 +3,7 @@ import ActionTypes from "../../../constants/actionTypes";
 export const setPage = (value) => ({
     type: ActionTypes.SET_PAGE,
     payload: {
-        page: value
+        currentPage: value
     }
 });
 

@@ -6,17 +6,15 @@ import nextArrow from "./img/nextArrow.png";
 import "./scss/index.scss";
 
 const Pagination = (props) => {
-    const { loader, currentPage, lastPage } = props;
+    const { currentPage, lastPage } = props;
     const notInital = currentPage > 2 && currentPage < lastPage - 1;
     const isFirstPage = currentPage === 1;
     const isSecondPage = currentPage === 2;
     const isLastPage = currentPage === lastPage;
     const isNextToLast = currentPage === lastPage - 1;
-    console.log(lastPage);
     return(
         <>
         {
-            !loader &&
             <div className="pagination-layout d-flex align-items-center justify-content-end pe-4">
                 <span className={`pe-1 pointer ${isFirstPage && 'selected'}`} onClick={()=> props.setPage(1)}>1</span>
                 <span className={`pe-1 pointer ${isSecondPage && 'selected'}`} onClick={()=> props.setPage(2)}>2</span>
@@ -39,8 +37,7 @@ const Pagination = (props) => {
 }
 const mapStateToProps = (state) => {
     return {
-        loader: state.ui.loader,
-        currentPage: state.pagination.page,
+        currentPage: state.pagination.currentPage,
         lastPage: state.pagination.last,
         nextPage: state.pagination?.next,
 

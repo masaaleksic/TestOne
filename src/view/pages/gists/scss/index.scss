@@ -11,9 +11,10 @@
 .gists-layout {
   padding-left: 16px;
   padding-right: 16px;
+  margin-bottom: 50px;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 425px) {
   .gists-layout {
     padding-left: 0;
     padding-right: 0;

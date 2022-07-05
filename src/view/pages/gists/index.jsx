@@ -52,7 +52,7 @@ const mapStateToProps = (state) => {
     return {
         gists: state.gists?.gists,
         loader: state.ui.loader,
-        currentPage: state.pagination.page,
+        currentPage: state.pagination.currentPage,
         statusCode: state.status.statusCode
     };
 };

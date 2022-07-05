@@ -32,15 +32,28 @@
   }
 }
 
-@media screen and (max-width: 375px) {
+@keyframes fade {
+  0%,100% { opacity: 0 }
+  50% { opacity: 1 }
+}
+
+.centered {
+  animation: fade 1s;
+  position:fixed;
+  left: 50%;
+  top:  50%;
+}
+
+@media screen and (max-width: 425px) {
   .gist-img {
     height: 50px;
     width: 50px;
   }
 
   .gist-layout {
+    padding-left: 10px;
     height: 70px;
-    width: 100%;
+    max-width: 100%;
     border-bottom: 1px solid $gray20;
   }
 

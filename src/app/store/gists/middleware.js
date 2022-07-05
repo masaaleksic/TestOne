@@ -13,8 +13,8 @@ export const getGistsMiddleware = (store) => (next) => (action) => {
     switch (action.type) {
         case ActionTypes.FETCH_GISTS:
             next(setLoader(true));
-            axios.get(`c${Config.api.github}${Config.gists}`, {
-                    params: { page: store.getState().pagination.page }
+            axios.get(`${Config.api.github}${Config.gists}`, {
+                    params: { page: store.getState().pagination.currentPage }
             })
                 .then(resp => {
                     next(setStatus(resp.status));
@@ -24,6 +24,6 @@ export const getGistsMiddleware = (store) => (next) => (action) => {
                     }
                     next(setLoader(false));
                 });
-break;
+        break;
     }
 };

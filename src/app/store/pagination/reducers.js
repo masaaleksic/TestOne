@@ -1,7 +1,7 @@
 import ActionTypes from "../../../constants/actionTypes";
 
 const initialState = {
-    page: 1,
+    currentPage: 1,
     first: 1,
     next: '',
     last: '',
@@ -12,7 +12,7 @@ const setPageReducer = (state = initialState, action) => {
         case ActionTypes.SET_PAGE:
             return {
                 ...state,
-                page: action.payload.page
+                currentPage: action.payload.currentPage
             }
         case ActionTypes.SET_PAGINATION_DATA:
             return {
