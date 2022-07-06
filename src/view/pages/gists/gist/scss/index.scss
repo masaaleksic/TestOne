@@ -11,8 +11,13 @@
   width: 74px;
 
   &.selected {
-    background: $grayscale-black;
     opacity: 0.5;
+  }
+}
+
+.gist-img-layout {
+  &.selected {
+    background-color: $grayscale-black;
   }
 }
 

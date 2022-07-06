@@ -10,6 +10,10 @@
   src: url('../fonts/HelveticaNeue.ttf');
 }
 
+body {
+  scroll-behavior: smooth;
+}
+
 .font-helvetica {
   font-family: 'Helvetica', SansSerif, Arial;
 }

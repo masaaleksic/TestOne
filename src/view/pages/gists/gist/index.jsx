@@ -19,7 +19,9 @@ const Gist = (props) => {
 
     return (
         <div className="gist-layout d-flex align-items-center" key={key} onClick={()=>{props.selectGist(gistInfo.id); moveToCenter()}}>
-            <img src={gistInfo.owner.avatar_url} alt={gistInfo.owner.avatar_url} className={`gist-img ${selected}`}/>
+            <div className={`gist-img-layout ${selected}`}>
+                <img src={gistInfo.owner.avatar_url} alt={gistInfo.owner.avatar_url} className={`gist-img ${selected}`}/>
+            </div>
             {
                 centered &&
                     <img src={gistInfo.owner.avatar_url} alt={gistInfo.owner.avatar_url} className={`gist-img centered`}/>
